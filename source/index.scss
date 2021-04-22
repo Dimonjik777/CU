@@ -9,6 +9,10 @@ body{
 	margin: 0;
 	transition: 1s ease all;
 	font-size: 14px;
+
+	&.lock{
+		overflow-y: hidden;
+	}
 }
 
 h1{
@@ -39,6 +43,15 @@ p{
 	background: black;
 	color:white;
 	padding: 20px 0;
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+
+	&:before{
+		content: '';
+		position: absolute;
+		z-index: 3;
+	}
 
 	.container{
 		display: flex;
@@ -67,10 +80,23 @@ p{
 		}
 		ul{
 			display: block;
+			transition: 0.5s all ease;
+
+			&.active{
+				top: 85px;	
+				z-index: 2;		
+			}
 
 			li{
 				display: inline;
 				margin-right: 35px;
+
+
+				&:hover{
+					transition: 0.5s all ease;
+					border-bottom: 1px solid white;
+
+				}
 
 				a{
 					color: white;
@@ -78,6 +104,10 @@ p{
 					font-weight: 600;
 					font-size: 16px;
 				}
+				&:last-child{
+					display: none;
+				}
+
 			}
 		}
 		.work{
@@ -86,6 +116,53 @@ p{
 		}
 		.burger{
 			display: none;
+			width: 30px;
+			height: 20px;
+			position: relative;
+
+
+			span{
+				position: absolute;
+				background-color: white;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				top: 9px;
+				transition: 0.5s all ease;
+			}
+
+			&:before{
+				top: 0;
+			}
+			&:after{
+				bottom: 0;
+			}
+
+			&:before, &:after{
+				content: '';
+				background-color: white;
+				position: absolute;
+				width: 100%;
+				height: 2px;
+				transition: 0.5s all ease;
+			}
+
+			&.active{
+
+				span{
+					transform: scale(0);
+				}
+
+				&:before{
+					transform: rotate(45deg);
+					top: 9px;
+				}
+
+				&:after{
+					transform: rotate(-45deg);
+					bottom: 9px;
+				}
+			}
 		}
 	}
 }
@@ -94,6 +171,7 @@ p{
 	background: url("images/first screen.png") no-repeat;
 	background-size: cover;
 	margin-bottom: 100px;
+	margin-top: 98px;
 	.container{
 		display: flex;
 		.first__screen__left{
@@ -239,6 +317,24 @@ margin-bottom: 100px;
 					background: linear-gradient( to bottom right, #FAE73C, #FAE73C);
 					padding: 9px 10px;
 					border-radius: 100px;
+					cursor: pointer;
+				}
+
+				.slider{
+					position: relative;
+					width: 610px;
+					height: 425px;
+
+					img{
+						display: none;
+						position: absolute;
+						width: 610px;
+						height: 425px;
+
+						&.curry{
+							display: block;
+						}
+					}
 				}
 			}
 		}
@@ -344,6 +440,7 @@ margin-bottom: 100px;
 								border-radius: 10px;
 								font-size: 24px;
 								font-weight: 700;
+								cursor: pointer;
 							}
 						}
 					}
@@ -442,8 +539,42 @@ margin-bottom: 100px;
 		text-align: center;
 	}
 
+	.header{
+		padding: 5px 0px;
+	}
+
 	.header .container ul{
-		display: none;
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+		width: 100%;
+		top: -200%;
+		background: white;
+		padding-left: 0;
+		z-index: 1;
+		overflow: auto;
+
+		li{
+			padding: 30px;
+			margin-right: 0;
+			border-bottom: 1px solid #000;
+
+			&:last-child{
+				border: none;
+				color: black;
+				display: block;
+				font-weight: 500;
+				text-align: right;
+				font-size: 20px;
+				padding-top: 20px;
+			}
+
+			a{
+				color: black;
+				font-size: 20px;
+			font-weight: 700;
+			}
+		}
 	}
 
 	.header .container .work{
@@ -456,6 +587,8 @@ margin-bottom: 100px;
 		margin-right: 10px;
 		cursor: pointer;
 	}
+
+
 
 	.call .container .call__content .call__content__left{
 		text-align: center;
@@ -546,6 +679,14 @@ margin-bottom: 100px;
 
 	.first__screen__left{
 		padding-bottom: 50px;
+	}
+
+	.footer .container .adress{
+		display: none;
+	}
+
+	.header .container .adress{
+		display: none;
 	}
 }
 

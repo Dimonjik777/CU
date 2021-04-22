@@ -8,6 +8,9 @@ body {
   transition: 1s ease all;
   font-size: 14px;
 }
+body.lock {
+  overflow-y: hidden;
+}
 
 h1 {
   font-size: 36px;
@@ -38,6 +41,14 @@ p {
   background: black;
   color: white;
   padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+.header:before {
+  content: "";
+  position: absolute;
+  z-index: 3;
 }
 .header .container {
   display: flex;
@@ -64,10 +75,19 @@ p {
 }
 .header .container ul {
   display: block;
+  transition: 0.5s all ease;
+}
+.header .container ul.active {
+  top: 85px;
+  z-index: 2;
 }
 .header .container ul li {
   display: inline;
   margin-right: 35px;
+}
+.header .container ul li:hover {
+  transition: 0.5s all ease;
+  border-bottom: 1px solid white;
 }
 .header .container ul li a {
   color: white;
@@ -75,18 +95,59 @@ p {
   font-weight: 600;
   font-size: 16px;
 }
+.header .container ul li:last-child {
+  display: none;
+}
 .header .container .work {
   margin-left: auto;
   text-align: left;
 }
 .header .container .burger {
   display: none;
+  width: 30px;
+  height: 20px;
+  position: relative;
+}
+.header .container .burger span {
+  position: absolute;
+  background-color: white;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  top: 9px;
+  transition: 0.5s all ease;
+}
+.header .container .burger:before {
+  top: 0;
+}
+.header .container .burger:after {
+  bottom: 0;
+}
+.header .container .burger:before, .header .container .burger:after {
+  content: "";
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  transition: 0.5s all ease;
+}
+.header .container .burger.active span {
+  transform: scale(0);
+}
+.header .container .burger.active:before {
+  transform: rotate(45deg);
+  top: 9px;
+}
+.header .container .burger.active:after {
+  transform: rotate(-45deg);
+  bottom: 9px;
 }
 
 .first__screen {
   background: url("images/first screen.png") no-repeat;
   background-size: cover;
   margin-bottom: 100px;
+  margin-top: 98px;
 }
 .first__screen .container {
   display: flex;
@@ -205,6 +266,21 @@ p {
   background: linear-gradient(to bottom right, #FAE73C, #FAE73C);
   padding: 9px 10px;
   border-radius: 100px;
+  cursor: pointer;
+}
+.why .container .why__content .why__content__right .slider {
+  position: relative;
+  width: 610px;
+  height: 425px;
+}
+.why .container .why__content .why__content__right .slider img {
+  display: none;
+  position: absolute;
+  width: 610px;
+  height: 425px;
+}
+.why .container .why__content .why__content__right .slider img.curry {
+  display: block;
 }
 
 .invest {
@@ -376,8 +452,39 @@ p {
     text-align: center;
   }
 
+  .header {
+    padding: 5px 0px;
+  }
+
   .header .container ul {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    top: -200%;
+    background: white;
+    padding-left: 0;
+    z-index: 1;
+    overflow: auto;
+  }
+  .header .container ul li {
+    padding: 30px;
+    margin-right: 0;
+    border-bottom: 1px solid #000;
+  }
+  .header .container ul li:last-child {
+    border: none;
+    color: black;
+    display: block;
+    font-weight: 500;
+    text-align: right;
+    font-size: 20px;
+    padding-top: 20px;
+  }
+  .header .container ul li a {
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
   }
 
   .header .container .work {
@@ -471,6 +578,14 @@ p {
 
   .first__screen__left {
     padding-bottom: 50px;
+  }
+
+  .footer .container .adress {
+    display: none;
+  }
+
+  .header .container .adress {
+    display: none;
   }
 }
 @media screen and (max-width: 600px) {
