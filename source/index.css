@@ -76,9 +76,11 @@ p {
 .header .container ul {
   display: block;
   transition: 0.5s all ease;
+  top: 55px;
 }
 .header .container ul.active {
-  top: 56px;
+  right: 0;
+  top: 55px;
   z-index: 1;
 }
 .header .container ul li {
@@ -564,10 +566,10 @@ p {
     flex-direction: column;
     position: fixed;
     width: 100%;
-    top: -200%;
+    right: -200%;
     background: white;
     padding-left: 0;
-    z-index: 1;
+    z-index: -1;
     overflow: auto;
   }
   .header .container ul li {
@@ -716,6 +718,34 @@ p {
   .invest .container table tr th {
     padding: 15px 0;
     font-size: 16px;
+  }
+  .invest .container table tr th.procent {
+    cursor: pointer;
+    transition: 0.4s all ease;
+  }
+  .invest .container table tr th.procent .rate {
+    margin-top: 20px;
+  }
+  .invest .container table tr th.procent p {
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: 0.4s all ease;
+  }
+  .invest .container table tr th.procent .hover {
+    opacity: 0;
+    font-size: 20px;
+    transform: translateY(0px);
+  }
+  .invest .container table tr th.procent:hover .rate {
+    opacity: 0;
+  }
+  .invest .container table tr th.procent:hover .hover {
+    opacity: 1;
+    transition-delay: 0.3s;
+    transform: translateY(-20px);
   }
 
   .footer .container .adress {
