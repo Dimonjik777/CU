@@ -12,6 +12,11 @@ body.lock {
   overflow-y: hidden;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 h1 {
   font-size: 36px;
   font-weight: 900;
@@ -45,11 +50,6 @@ p {
   width: 100%;
   z-index: 100;
 }
-.header:before {
-  content: "";
-  position: absolute;
-  z-index: 3;
-}
 .header .container {
   display: flex;
   align-items: center;
@@ -58,6 +58,19 @@ p {
   display: flex;
   align-items: center;
   padding-right: 5px;
+}
+.header .container .emblem h1 {
+  font-size: 48px;
+  margin: 0;
+  font-weight: 700;
+  position: relative;
+}
+.header .container .emblem h1:after {
+  content: "U";
+  position: absolute;
+  font-size: 24px;
+  top: 35%;
+  left: 35%;
 }
 .header .container .emblem p {
   font-weight: 600;
@@ -78,8 +91,8 @@ p {
   transition: 0.5s all ease;
 }
 .header .container ul.active {
-  top: 85px;
-  z-index: 2;
+  top: 56px;
+  z-index: 1;
 }
 .header .container ul li {
   display: inline;
@@ -101,6 +114,17 @@ p {
 .header .container .work {
   margin-left: auto;
   text-align: left;
+}
+.header .container .work .working {
+  display: flex;
+  align-items: center;
+}
+.header .container .work .working .circle {
+  width: 10px;
+  height: 10px;
+  background: #42CF48;
+  border-radius: 50%;
+  margin-right: 5px;
 }
 .header .container .burger {
   display: none;
@@ -131,6 +155,9 @@ p {
   height: 2px;
   transition: 0.5s all ease;
 }
+.header .container .burger.active {
+  z-index: 1;
+}
 .header .container .burger.active span {
   transform: scale(0);
 }
@@ -144,10 +171,11 @@ p {
 }
 
 .first__screen {
+  padding-top: 20px;
   background: url("images/first screen.png") no-repeat;
   background-size: cover;
   margin-bottom: 100px;
-  margin-top: 98px;
+  margin-top: 58px;
 }
 .first__screen .container {
   display: flex;
@@ -155,6 +183,7 @@ p {
 .first__screen .container .first__screen__left {
   width: 725px;
   margin-top: 100px;
+  padding-bottom: 100px;
 }
 .first__screen .container .first__screen__left h1 {
   color: white;
@@ -181,6 +210,37 @@ p {
 .first__screen .container .first__screen__left a:hover {
   box-shadow: 0 0 5px #FCFC69;
 }
+.first__screen .container .first__screen__right {
+  position: relative;
+}
+.first__screen .container .first__screen__right .about__man {
+  -webkit-clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  position: absolute;
+  color: white;
+  top: 40%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  z-index: 1;
+  overflow: hidden;
+}
+.first__screen .container .first__screen__right .about__man .content {
+  width: 200px;
+  height: 310px;
+  font-size: 18px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.first__screen .container .first__screen__right .about__man .content h3 {
+  color: #FAE73C;
+}
 .first__screen .container .first__screen__right img {
   height: 100%;
   display: block;
@@ -206,6 +266,21 @@ p {
 .advantages .container .edges .advantage .advantage__content {
   width: 200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.advantages .container .edges .advantage .advantage__content .icon {
+  font-size: 48px;
+  background: linear-gradient(to right, #FAE73C, #FCFF71);
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .warrantys {
@@ -230,7 +305,7 @@ p {
   position: absolute;
   font-size: 288px;
   display: flex;
-  opacity: 0.25;
+  opacity: 0.1;
   left: 250px;
   bottom: -830px;
 }
@@ -265,7 +340,7 @@ p {
 .why .container .why__content .why__content__right .arrow {
   background: linear-gradient(to bottom right, #FAE73C, #FAE73C);
   padding: 9px 10px;
-  border-radius: 100px;
+  border-radius: 50%;
   cursor: pointer;
 }
 .why .container .why__content .why__content__right .slider {
@@ -324,6 +399,32 @@ p {
   padding: 50px;
   font-size: 14px;
   border: 1px solid black;
+  padding-bottom: 45px;
+  transition: 0.8s all ease;
+}
+.invest .container table tr th.procent {
+  cursor: pointer;
+  transition: 0.4s all ease;
+}
+.invest .container table tr th.procent p {
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: 0.4s all ease;
+}
+.invest .container table tr th.procent .hover {
+  opacity: 0;
+  font-size: 20px;
+}
+.invest .container table tr th.procent:hover .rate {
+  opacity: 0;
+}
+.invest .container table tr th.procent:hover .hover {
+  opacity: 1;
+  transition-delay: 0.3s;
+  transform: translateY(-10px);
 }
 
 .call {
@@ -366,6 +467,7 @@ p {
   border-radius: 10px;
   font-size: 24px;
   font-weight: 700;
+  cursor: pointer;
 }
 .call .container .call__content img {
   height: 100%;
@@ -384,6 +486,20 @@ p {
   display: flex;
   align-items: center;
   padding-right: 5px;
+}
+.footer .container .emblem h1 {
+  font-size: 48px;
+  margin: 0;
+  font-weight: 700;
+  position: relative;
+  color: white;
+}
+.footer .container .emblem h1:after {
+  content: "U";
+  position: absolute;
+  font-size: 24px;
+  top: 35%;
+  left: 35%;
 }
 .footer .container .emblem p {
   font-weight: 600;

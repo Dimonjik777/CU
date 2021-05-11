@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>CU</title>
 	<link rel="stylesheet" href="source/index.css">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;1,900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="source/icons/icons.css">
 </head>
 <body>
 	<div class="header">
 		<div class="container">
 			<div class="emblem">
-				<img src="source/images/emblem.png" alt="">
+				<h1>C</h1>
 				<p>Capital UA</p>
 			</div>
 			<div class="adress">
@@ -21,11 +20,10 @@
 			</div>
 			
 			<ul class="header__menu">
-				<li><a href="#">Главная</a></li>
-				<li><a href="#">Гарантии</a></li>
-				<li><a href="#">Почему мы?</a></li>
-				<li><a href="#">Этапы сотрудничества</a></li>
-				<li><p>+380 95 431 52 12</p>
+				<li><a href="/">Главная</a></li>
+				<li><a href="#warrantys">Гарантии</a></li>
+				<li><a href="#invest">Тарифы</a></li>
+				<li><a href="+380 95 431 52 12">+380 95 431 52 12</a>
 					<div class="working">
 					<img src="source/images/active.png" alt="">
 					<p>Сейчас работаем</p>
@@ -35,7 +33,7 @@
 			<div class="work">
 				<p>+380 95 431 52 12</p>
 				<div class="working">
-					<img src="source/images/active.png" alt="">
+					<div class="circle"></div>
 					<p>Сейчас работаем</p>
 				</div>
 			</div>
@@ -50,6 +48,12 @@
 				<a href="#" class="button">Выбрать предложение</a>
 			</div>
 			<div class="first__screen__right">
+				<div class="about__man">
+					<div class="content">
+						<h3>Евгений Заренин</h3>
+						<p>Основатель Capital UA, заработал на недвижимости 500 млн. гривен</p>
+					</div>
+				</div>
 				<img src="source/images/Man.png" alt="">
 			</div>
 		</div>
@@ -60,7 +64,7 @@
 			<div class="edges">
 				<div class="advantage">
 					<div class="advantage__content">
-						<img src="source/images/analyz.png" alt="">
+					<div class="icon _icon-analyz"></div>	
 					<h3>Иследования</h3>
 					<p>Мы иследоваем рынок 24/7, чтобы обезпечить вам результат</p>
 					</div>
@@ -68,21 +72,21 @@
 				</div>
 				<div class="advantage">
 					<div class="advantage__content">
-					<img src="source/images/money.png" alt="">
+					<div class="icon _icon-money"></div>
 					<h3>Результат</h3>
 					<p>В течении первого года вы получаете прибыль либо возращаем вам деньги</p>
 				</div>
 			</div>
 				<div class="advantage">
 					<div class="advantage__content">
-					<img src="source/images/bug.png" alt="">
+					<div class="icon _icon-bug"></div>
 					<h3>Наши портфели не огромны</h3>
 					<p>В наших портфелях только та недвижимость, что приносит максимальную доходность</p>
 				</div>
 			</div>
 				<div class="advantage">
 					<div class="advantage__content">
-					<img src="source/images/medal.png" alt="">
+					<div class="icon _icon-medal"></div>
 					<h3>Доверие</h3>
 					<p>Мы сотрудничаем с компаниями: PrivatBank, Apple, Gucci
   </p>
@@ -91,7 +95,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="warrantys">
+	<div id="warrantys" class="warrantys">
 		<div class="container">
 			<h2>Наши гарантии</h2>
 			<div class="warrantys__content">
@@ -117,7 +121,7 @@
 		
 		
 	</div>
-	<div class="why">
+	<div id="why" class="why">
 		<div class="container"> 
 			<h2>Почему мы?</h2>
 			<div class="why__content">
@@ -138,7 +142,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="invest">
+	<div id="invest" class="invest">
 		<div class="container">
 		<div class="invest__title">
 			<h2>Тарифная таблица инвестирования</h2>
@@ -155,7 +159,7 @@
 				<p>Срок инвестирования:</p>
 				<h3>6, 9, 12, 18 или 24</h3>
 			</div>
-			<div class="procent">
+			<div>
 				<p>Процентная вставка:</p>
 				<h3>от 12% до 28%</h3>
 			</div>
@@ -170,14 +174,14 @@
 			<tr class="table__grey">
 				<th>6 месяцев</th>
 				<th>Годовые. Выплаты каждые 3 месяца</th>
-				<th class="procent">12%</th>
-				<th class="procent">12%</th>
+				<th class="procent"><p class="rate">12%</p> <p class="hover">Выбрать это</p></th>
+				<th class="procent"><p class="rate">12%</p> <p class="hover">Выбрать это</p></th>
 			</tr>
 			<tr class="table__verygray">
 				<th>9 месяцев</th>
 				<th>Годовые. Выплаты каждые 3 месяца</th>
-				<th class="procent">12%</th>
-				<th class="procent">12%</th>
+				<th class="procent"><p class="rate">12%</p> <p class="hover">Выбрать это</p></th>
+				<th class="procent"><p class="rate">12%</p> <p class="hover">Выбрать это</p></th>
 			</tr>
 		</table>
 </div>
@@ -207,21 +211,21 @@
 	<div class="footer">
 		<div class="container">
 			<div class="emblem">
-			<img src="source/images/emblem.png" alt="">
-			<p>Capital UA</p>
-		</div>
+				<h1>C</h1>
+				<p>Capital UA</p>
+			</div>
 		<div class="adress">
 				<p>г. Киев</p> 
 				<p>Печерский дом 15, корпус 3</p>
 		</div>
 		<ul>
-			<li><a href="#">Главная</a></li>
-			<li><a href="#">Гарантии</a></li>
-			<li><a href="#">Почему мы?</a></li>
+			<li><a href="/">Главная</a></li>
+			<li><a href="#warriantys">Гарантии</a></li>
+			<li><a href="#invest">Тарифы</a></li>
 			
 		</ul>
 		<div class="work__footer">
-				<p>+380 95 431 52 12</p>
+				<a href="+380 95 431 52 12">+380 95 431 52 12</a>
 				<p>@2021 Все права защищены</p>
 			</div>
 	</div>

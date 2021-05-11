@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'CU';
+  src:  url('fonts/CU.eot?qodo0');
+  src:  url('fonts/CU.eot?qodo0#iefix') format('embedded-opentype'),
+    url('fonts/CU.ttf?qodo0') format('truetype'),
+    url('fonts/CU.woff?qodo0') format('woff'),
+    url('fonts/CU.svg?qodo0#CU') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="_icon-"]:before, [class*=" _icon-"]:before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'CU' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-medal:before {
+  content: "\e900";
+}
+._icon-bug:before {
+  content: "\e901";
+}
+._icon-analyz:before {
+  content: "\e902";
+}
+._icon-money:before {
+  content: "\e903";
+}

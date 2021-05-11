@@ -15,6 +15,11 @@ body{
 	}
 }
 
+a{
+	color: white;
+	text-decoration: none;
+}
+
 h1{
 	font-size: 36px;
 	font-weight: 900;
@@ -46,13 +51,6 @@ p{
 	position: fixed;
 	width: 100%;
 	z-index: 100;
-
-	&:before{
-		content: '';
-		position: absolute;
-		z-index: 3;
-	}
-
 	.container{
 		display: flex;
 		align-items: center;
@@ -61,6 +59,21 @@ p{
 			display: flex;
 			align-items: center;
 			padding-right: 5px;
+
+			h1{
+				font-size: 48px;
+				margin: 0;
+				font-weight: 700;
+				position: relative;
+
+				&:after{
+					content: 'U';
+					position: absolute;
+					font-size: 24px;
+					top: 35%;
+					left: 35%;
+				}
+			}
 
 			p{
 				font-weight: 600;
@@ -83,8 +96,8 @@ p{
 			transition: 0.5s all ease;
 
 			&.active{
-				top: 85px;	
-				z-index: 2;		
+				top: 56px;	
+				z-index: 1;		
 			}
 
 			li{
@@ -113,6 +126,21 @@ p{
 		.work{
 			margin-left: auto;
 			text-align: left;
+
+			.working{
+				display: flex;
+				align-items: center;
+
+				.circle{
+				width: 10px;
+				height: 10px;
+				background: #42CF48;
+				border-radius: 50%;
+				margin-right: 5px;
+			}
+		}
+
+			
 		}
 		.burger{
 			display: none;
@@ -148,6 +176,7 @@ p{
 			}
 
 			&.active{
+				z-index: 1;
 
 				span{
 					transform: scale(0);
@@ -168,15 +197,17 @@ p{
 }
 
 .first__screen{
+	padding-top: 20px;
 	background: url("images/first screen.png") no-repeat;
 	background-size: cover;
 	margin-bottom: 100px;
-	margin-top: 98px;
+	margin-top: 58px;
 	.container{
 		display: flex;
 		.first__screen__left{
 			width: 725px;
 			margin-top: 100px;
+			padding-bottom: 100px;
 
 			h1{
 				color: white;
@@ -207,8 +238,39 @@ p{
 				}
 		}
 		.first__screen__right{
-
+			position: relative;
 			
+			.about__man{
+				clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
+				border-left: 1px solid rgba(255, 255, 255, 0.2);
+				border-top: 1px solid rgba(255, 255, 255, 0.2);
+				border-radius: 20px;
+				position: absolute;
+				color: white;
+				top: 40%;
+				left: 0;	
+				background: rgba(255, 255, 255, 0.15);
+				backdrop-filter: blur(10px);
+				z-index: 1;
+				overflow: hidden;
+				
+
+				.content{
+					width: 200px;
+					height: 310px;
+					font-size: 18px;
+					padding: 20px;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+
+
+					h3{
+						color: #FAE73C;
+					}
+				}
+			}
+
 			img{
 				height: 100%;
 				display: block;
@@ -240,6 +302,22 @@ margin-bottom: 100px;
 				.advantage__content{
 					width: 200px;
 					margin: 0 auto;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+
+					.icon{
+						font-size: 48px;
+						background: linear-gradient( to right, #FAE73C, #FCFF71);
+						border-radius: 50%;
+						width: 110px;
+						height: 110px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						margin-top: 30px;
+					}
 				}
 			}
 		}
@@ -273,7 +351,7 @@ margin-bottom: 100px;
 			position: absolute;
 			font-size: 288px;
 			display: flex;
-			opacity: 0.25;
+			opacity: 0.1;
 			left: 250px;
 			bottom: -830px;
 
@@ -316,7 +394,7 @@ margin-bottom: 100px;
 				.arrow{
 					background: linear-gradient( to bottom right, #FAE73C, #FAE73C);
 					padding: 9px 10px;
-					border-radius: 100px;
+					border-radius: 50%;
 					cursor: pointer;
 				}
 
@@ -388,6 +466,41 @@ margin-bottom: 100px;
 					padding: 50px;
 					font-size: 14px;
 					border: 1px solid black;
+					padding-bottom: 45px;
+					transition: 0.8s all ease;
+
+					&.procent{
+						cursor: pointer;
+						transition: 0.4s all ease;
+
+
+						p{
+							opacity: 1;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							flex-direction: column;
+							transition: 0.4s all ease;
+						}
+
+						.hover {
+								opacity: 0;
+								font-size: 20px;
+								
+							}
+							&:hover{
+
+								.rate{
+									opacity: 0;
+								}
+
+								.hover{
+									opacity: 1;
+									transition-delay: 0.3s;
+									transform: translateY(-10px);
+								}
+							}
+					}
 
 				}
 			}
@@ -465,6 +578,22 @@ margin-bottom: 100px;
 			display: flex;
 			align-items: center;
 			padding-right: 5px;
+
+			h1{
+				font-size: 48px;
+				margin: 0;
+				font-weight: 700;
+				position: relative;
+				color: white;
+
+				&:after{
+					content: 'U';
+					position: absolute;
+					font-size: 24px;
+					top: 35%;
+					left: 35%;
+				}
+			}
 
 			p{
 				font-weight: 600;

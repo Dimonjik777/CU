@@ -39,15 +39,15 @@ $(document).ready(function() {
 	});
 })
 
-document.addEventListener("DOMContentLoader", function() {
+const anchors = document.querySelectorAll('a[href*="#"]');
 
-	const form = document.querySelector(".call__form");
-
-	form.addEventListener('submit', formSend);
-
-	async function formSend(e) {
-		e.preventDefault();
-
-		
-	}
-})
+for ( let anchor of anchors ) {
+	anchor.addEventListener('click', function  (event) {
+		event.preventDefault();
+		const blockID = anchor.getAttribute('href');
+		document.querySelector('' + blockID).scrollIntoView( {
+			behavior: 'smooth',
+			block: 'start'
+		});
+	})
+}
