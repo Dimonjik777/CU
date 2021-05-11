@@ -59,19 +59,6 @@ p {
   align-items: center;
   padding-right: 5px;
 }
-.header .container .emblem h1 {
-  font-size: 48px;
-  margin: 0;
-  font-weight: 700;
-  position: relative;
-}
-.header .container .emblem h1:after {
-  content: "U";
-  position: absolute;
-  font-size: 24px;
-  top: 35%;
-  left: 35%;
-}
 .header .container .emblem p {
   font-weight: 600;
   margin-left: 5px;
