@@ -51,3 +51,5 @@ for ( let anchor of anchors ) {
 		});
 	})
 }
+
+const procents = document.querySelectorAll('.procent');

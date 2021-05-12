@@ -18,17 +18,46 @@ a {
 }
 
 h1 {
-  font-size: 36px;
   font-weight: 900;
+}
+@media (max-width: 767px) {
+  h1 {
+    font-size: calc(20px + 17 * ((100vw - 320px) / 1170));
+  }
+}
+@media (min-width: 767px) {
+  h1 {
+    font-size: calc(20px + 10 * (100vw / 1170));
+  }
 }
 
 h2 {
   font-size: 36px;
 }
+@media (max-width: 767px) {
+  h2 {
+    font-size: calc(24px + 10.2 * ((100vw - 320px) / 1170));
+  }
+}
+@media (min-width: 767px) {
+  h2 {
+    font-size: calc(24px + 6 * (100vw / 1170));
+  }
+}
 
 h3 {
   font-size: 20px;
   font-weight: 700;
+}
+@media (max-width: 767px) {
+  h3 {
+    font-size: calc(18px + 3.4 * ((100vw - 320px) / 1170));
+  }
+}
+@media (min-width: 767px) {
+  h3 {
+    font-size: calc(18px + 2 * (100vw / 1170));
+  }
 }
 
 .container {
@@ -186,6 +215,16 @@ p {
   display: block;
   margin-top: 2 0px;
 }
+@media (max-width: 767px) {
+  .first__screen .container .first__screen__left p {
+    font-size: calc(18px + 10.2 * ((100vw - 320px) / 1170));
+  }
+}
+@media (min-width: 767px) {
+  .first__screen .container .first__screen__left p {
+    font-size: calc(18px + 6 * (100vw / 1170));
+  }
+}
 .first__screen .container .first__screen__left a {
   font-size: 24px;
   text-decoration: none;
@@ -312,8 +351,15 @@ p {
   display: flex;
   align-items: center;
 }
-.why .container .why__content .why__content__left {
-  font-size: 24px;
+@media (max-width: 767px) {
+  .why .container .why__content .why__content__left {
+    font-size: calc(16px + 6.8 * ((100vw - 320px) / 1170));
+  }
+}
+@media (min-width: 767px) {
+  .why .container .why__content .why__content__left {
+    font-size: calc(16px + 4 * (100vw / 1170));
+  }
 }
 .why .container .why__content .why__content__left p {
   display: block;
@@ -402,6 +448,9 @@ p {
   justify-content: center;
   flex-direction: column;
   transition: 0.4s all ease;
+}
+.invest .container table tr th.procent .rate {
+  transform: translateY(10px);
 }
 .invest .container table tr th.procent .hover {
   opacity: 0;
@@ -650,12 +699,22 @@ p {
   }
   .advantages .container .edges .advantage {
     margin-bottom: 10px;
+    height: 300px;
+  }
+  .advantages .container .edges .advantage .icon {
+    height: 70px;
+    width: 70px;
+    font-size: 20px;
   }
 }
 @media screen and (max-width: 768px) {
   .invest .container .conditions {
     flex-direction: column;
     text-align: center;
+  }
+
+  .why .container .why__content .why__content__right {
+    display: none;
   }
 
   .why .container .why__content .why__content__right .arrow {
@@ -733,6 +792,9 @@ p {
     justify-content: center;
     flex-direction: column;
     transition: 0.4s all ease;
+  }
+  .invest .container table tr th.procent .rate {
+    transform: translateY(0);
   }
   .invest .container table tr th.procent .hover {
     opacity: 0;
