@@ -98,6 +98,7 @@ p {
   border-left: 1px solid white;
   padding-left: 5px;
   margin-left: 5px;
+  padding-top: 5px;
 }
 .header .container .adress p {
   margin-bottom: 10px;
